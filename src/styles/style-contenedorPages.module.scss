@@ -1,0 +1,7 @@
+.contenedorpages{
+    flex: 1;                /* TOMA TODO EL ESPACIO DISPONIBLE */
+    height: 100%;           /* IMPORTANTE */
+    // border: 3px solid blue;
+    box-sizing: border-box;
+    overflow: auto;  
+}
