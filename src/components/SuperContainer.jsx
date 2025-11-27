@@ -1,5 +1,5 @@
 import React from 'react'
-import style from '../styles/style-supercontainer.module.scss'
+import style from '../styles/style-superContainer.module.scss'
 import Navbar from './Navbar'
 import ContanerPages from './ContanerPages'
 
