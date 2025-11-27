@@ -4,11 +4,14 @@ import './index.css'
 
 import App from './App.jsx'
 import { AuthProvider } from "./context/AuthContext";
+import { CarritoProvider } from "./context/CarritoContext"; // 👈 Importar
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <AuthProvider>
-      <App />
+      <CarritoProvider> {/* 👈 Agregar */}
+        <App />
+      </CarritoProvider> {/* 👈 Cerrar */}
     </AuthProvider>
   </StrictMode>,
 )

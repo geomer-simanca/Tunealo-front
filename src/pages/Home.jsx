@@ -7,6 +7,7 @@ import BotonPruebaConection from '../components/BotonPruebaConection'
 import LoginGoogle from '../components/LoginGoogle'
 import BotonCerrar from '../components/BotonCerrar'
 import { AuthContext } from '../context/AuthContext';
+import { CarritoContext } from '../context/CarritoContext';
 import { Link } from 'react-router-dom'
 import btnstyle from '../styles/stylesPages/style-Home-botonVender.module.scss'
 import img from '../assets/logo.png'
@@ -15,6 +16,7 @@ import img from '../assets/logo.png'
 const Home = () => {
     const [esVendedorBD, setEsVendedorBD] = useState(false);
     const { usuario } = useContext(AuthContext);
+    const { agregarAlCarrito } = useContext(CarritoContext);
     const [productos, setProductos] = useState([]);
 
     const fetchProductos = async ()=>{
@@ -59,7 +61,9 @@ const Home = () => {
         verificarVendedor();
     }, [usuario]);
 
-
+    const handleAgregarCarrito = (producto) => {
+        agregarAlCarrito(producto);
+    };
 
     return (
         <div className={style.containerHome} >
@@ -119,7 +123,7 @@ const Home = () => {
 
                         {/* BOTÓN PEGADO ABAJO */}
                         <div className="mt-auto">
-                        <button className="btn btn-danger w-100">Agregar al Carrito</button>
+                        <button className="btn btn-danger w-100" onClick={() => handleAgregarCarrito(producto)}>Agregar al Carrito</button>
                         </div>
                     </div>
 
