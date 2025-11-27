@@ -8,7 +8,7 @@ const LoginGoogle = () => {
         const { data, error } = await supabase.auth.signInWithOAuth({
         provider: "google",
         options: {
-            redirectTo: "http://localhost:5173/auth/callback" // o tu dominio productivo
+            redirectTo: `${window.location.origin}/auth/callback` // o tu dominio productivo
         }
         });
 
