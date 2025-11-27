@@ -1,8 +1,9 @@
-import React from 'react'
+import ChatIA from '../components/ChatIA';
 
 const Ia = () => {
     return (
-        <div>Ia</div>
+        <ChatIA/>
+        
     )
 }
 
